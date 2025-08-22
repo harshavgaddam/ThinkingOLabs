@@ -251,6 +251,7 @@ createParticles();
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
     const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
     const navbar = document.querySelector('.navbar');
 
@@ -282,6 +283,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Close menu function
+    function closeMobileMenu() {
+        mobileMenuBtn.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Reset animation delays
+        mobileMenuLinks.forEach(link => {
+            link.style.animationDelay = '0s';
+        });
+    }
+
+    // Close button functionality
+    mobileMenuClose.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeMobileMenu();
+    });
+
     // Enhanced close mobile menu when clicking on links
     mobileMenuLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -295,9 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Close menu with delay for better UX
             setTimeout(() => {
-                mobileMenuBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
+                closeMobileMenu();
                 
                 // Smooth scroll to target
                 const targetId = this.getAttribute('href');
@@ -319,18 +336,14 @@ document.addEventListener('DOMContentLoaded', function() {
             !mobileMenu.contains(e.target) && 
             !mobileMenuBtn.contains(e.target)) {
             
-            mobileMenuBtn.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            closeMobileMenu();
         }
     });
 
     // Close menu on escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-            mobileMenuBtn.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            closeMobileMenu();
         }
     });
 
@@ -393,9 +406,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (deltaX > 100) {
                 // Swipe right to close
-                mobileMenuBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
+                closeMobileMenu();
             }
         }
     });

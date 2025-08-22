@@ -278,6 +278,51 @@ body {
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
 }
 
+/* Apple-Style Close Button */
+.mobile-menu-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1003;
+}
+
+.mobile-menu-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.mobile-menu-close span {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 1px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-close span:first-child {
+    transform: rotate(45deg);
+}
+
+.mobile-menu-close span:last-child {
+    transform: rotate(-45deg);
+}
+
+.mobile-menu-close:hover span {
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
 .mobile-menu-links {
     display: flex;
     flex-direction: column;
@@ -1153,6 +1198,13 @@ body {
         min-height: 70px;
     }
     
+    .mobile-menu-close {
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 40px;
+        height: 40px;
+    }
+    
     .hero {
         padding: 6rem 0 3rem;
         min-height: 100vh;
@@ -1468,6 +1520,18 @@ body {
         min-height: 50px;
     }
     
+    .mobile-menu-close {
+        top: 1rem;
+        right: 1rem;
+        width: 36px;
+        height: 36px;
+    }
+    
+    .mobile-menu-close span {
+        width: 16px;
+        height: 1.5px;
+    }
+    
     .hero {
         padding: 4rem 0 2rem;
     }
@@ -1633,6 +1697,18 @@ body {
         font-size: 1.2rem;
         padding: 0.7rem 1.2rem;
         min-height: 45px;
+    }
+    
+    .mobile-menu-close {
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 32px;
+        height: 32px;
+    }
+    
+    .mobile-menu-close span {
+        width: 14px;
+        height: 1px;
     }
     
     .hero-title {
