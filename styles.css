@@ -67,6 +67,8 @@ body {
         rgba(255, 255, 255, 0.4) 75%, 
         transparent 100%);
     opacity: 0.8;
+    width: 100%;
+    max-width: 100vw;
 }
 
 .nav-brand {
@@ -625,6 +627,17 @@ body {
         max-width: 1400px;
     }
     
+    .navbar::before {
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.3) 20%, 
+            rgba(255, 255, 255, 0.6) 40%, 
+            rgba(255, 255, 255, 0.9) 50%, 
+            rgba(255, 255, 255, 0.6) 60%, 
+            rgba(255, 255, 255, 0.3) 80%, 
+            transparent 100%);
+    }
+    
     .hero-title {
         font-size: 4.5rem;
     }
@@ -655,6 +668,15 @@ body {
 
 /* Desktop (1200px to 1399px) */
 @media (max-width: 1399px) and (min-width: 1200px) {
+    .navbar::before {
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.35) 25%, 
+            rgba(255, 255, 255, 0.7) 50%, 
+            rgba(255, 255, 255, 0.35) 75%, 
+            transparent 100%);
+    }
+    
     .hero-title {
         font-size: 4rem;
     }
@@ -673,6 +695,15 @@ body {
     
     .navbar .container {
         padding: 0 30px;
+    }
+    
+    .navbar::before {
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.4) 30%, 
+            rgba(255, 255, 255, 0.8) 50%, 
+            rgba(255, 255, 255, 0.4) 70%, 
+            transparent 100%);
     }
     
     .hero-title {
@@ -707,6 +738,15 @@ body {
     
     .navbar .container {
         padding: 0 25px;
+    }
+    
+    .navbar::before {
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.45) 35%, 
+            rgba(255, 255, 255, 0.85) 50%, 
+            rgba(255, 255, 255, 0.45) 65%, 
+            transparent 100%);
     }
     
     .hero-content {
@@ -764,6 +804,16 @@ body {
     
     .navbar .container {
         padding: 0 20px;
+    }
+    
+    .navbar::before {
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.5) 40%, 
+            rgba(255, 255, 255, 0.9) 50%, 
+            rgba(255, 255, 255, 0.5) 60%, 
+            transparent 100%);
+        height: 1px;
     }
     
     .hero {
@@ -862,6 +912,16 @@ body {
         padding: 0 15px;
     }
     
+    .navbar::before {
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.55) 45%, 
+            rgba(255, 255, 255, 0.95) 50%, 
+            rgba(255, 255, 255, 0.55) 55%, 
+            transparent 100%);
+        height: 1px;
+    }
+    
     .hero {
         padding: 5rem 0 2rem;
     }
@@ -917,6 +977,16 @@ body {
     
     .navbar .container {
         padding: 0 12px;
+    }
+    
+    .navbar::before {
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.6) 50%, 
+            rgba(255, 255, 255, 1) 50%, 
+            rgba(255, 255, 255, 0.6) 50%, 
+            transparent 100%);
+        height: 1px;
     }
     
     .hero {
@@ -1004,6 +1074,16 @@ body {
         padding: 0 10px;
     }
     
+    .navbar::before {
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.7) 50%, 
+            rgba(255, 255, 255, 1) 50%, 
+            rgba(255, 255, 255, 0.7) 50%, 
+            transparent 100%);
+        height: 1px;
+    }
+    
     .hero-title {
         font-size: 1.6rem;
     }
@@ -1058,6 +1138,15 @@ body {
 
 /* Landscape Orientation Adjustments */
 @media (max-height: 500px) and (orientation: landscape) {
+    .navbar::before {
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.4) 30%, 
+            rgba(255, 255, 255, 0.8) 50%, 
+            rgba(255, 255, 255, 0.4) 70%, 
+            transparent 100%);
+    }
+    
     .hero {
         min-height: auto;
         padding: 4rem 0 2rem;
@@ -1088,6 +1177,16 @@ body {
 
 /* High DPI Displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .navbar::before {
+        height: 0.5px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.6) 25%, 
+            rgba(255, 255, 255, 1) 50%, 
+            rgba(255, 255, 255, 0.6) 75%, 
+            transparent 100%);
+    }
+    
     .neural-network {
         transform: scale(0.9);
     }
@@ -1100,6 +1199,10 @@ body {
 
 /* Print Styles */
 @media print {
+    .navbar::before {
+        display: none;
+    }
+    
     .navbar {
         position: static;
         background: #000000;
